@@ -1,0 +1,31 @@
+{% extends "blog/layout.html" %}
+<!--extends는 항상 자식 html 가장 위에 와야 함-->
+
+{% block content %}
+
+    <ul>
+    {% for post in post_list %}
+        <li>
+            <!--[{{ post.pk }}]-->
+            <a href = "/blog/{{post.pk}}/"> <!--{# URL Reverse 기능 미적용#}-->
+            {{ post.title }}
+            </a>
+            <a href = "{% url "blog:post_detail" post.pk %}">
+                URL Reverse #1
+            </a>
+            <a href = "{{ post.get_absolute_url }}">
+                URL Reverse #2
+            </a>
+
+            <small> at {{ post.updated_at }} </small>
+        </li>
+        <!--    <p> 내용 : {{ post.content }} </p>
+            <p> 위치 :{{ post.lnglat }} </p>
+        -->
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
