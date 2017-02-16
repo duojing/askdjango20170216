@@ -10,7 +10,7 @@ DATABASES = {
     'ENGINE' : 'django.db.backends.mysql',
     'HOST': 'duojing.mysql.pythonanywhere-services.com',
     'NAME': 'duojing$default',
-    'USER': 'duojing'
+    'USER': 'duojing',
     'PASSWORD' : '950711ju',
     'OPTIONS': {
     'sql_mode': 'traditional',
